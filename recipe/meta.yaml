@@ -1,6 +1,6 @@
 {% set name = "espei" %}
-{% set version = "0.3.1.post2" %}
-{% set sha256 = "e99ac61d69a256ac8f62326874a4942c93ea41471387bdb8aecd00f97f6bd6c7" %}
+{% set version = "0.4" %}
+{% set sha256 = "0c658eede61731da9f766ea4daa09925587dcd5460c838df08a15febdc6dfec9" %}
 
 package:
   name: {{ name|lower }}
@@ -12,6 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
+  skip: true  # [win32]
   number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
   entry_points:
@@ -35,15 +36,19 @@ requirements:
     - pyyaml
     - cerberus
     - mpi4py
+    - bibtexparser
 
 test:
   imports:
     - espei
-    - espei.paramselect
     - espei.core_utils
     - espei.datasets
-    - espei.plot
     - espei.espei_script
+    - espei.mcmc
+    - espei.paramselect
+    - espei.plot
+    - espei.refdata
+    - espei.rstate
     - espei.utils
   commands:
     - espei -h
