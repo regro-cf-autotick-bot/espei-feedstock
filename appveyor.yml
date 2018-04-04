@@ -9,25 +9,13 @@ environment:
     secure: ipv/06DzgA7pzz2CIAtbPxZSsphDtF+JFyoWRnXkn3O8j7oRe3rzqj3LOoq2DZp4
 
   matrix:
-    - TARGET_ARCH: x86
-      CONDA_PY: 27
-      CONDA_INSTALL_LOCN: C:\\Miniconda
-
     - TARGET_ARCH: x64
       CONDA_PY: 27
       CONDA_INSTALL_LOCN: C:\\Miniconda-x64
 
-    - TARGET_ARCH: x86
-      CONDA_PY: 35
-      CONDA_INSTALL_LOCN: C:\\Miniconda35
-
     - TARGET_ARCH: x64
       CONDA_PY: 35
       CONDA_INSTALL_LOCN: C:\\Miniconda35-x64
-
-    - TARGET_ARCH: x86
-      CONDA_PY: 36
-      CONDA_INSTALL_LOCN: C:\\Miniconda36
 
     - TARGET_ARCH: x64
       CONDA_PY: 36
@@ -60,9 +48,6 @@ install:
     - cmd: conda.exe config --remove channels defaults
     - cmd: conda.exe config --add channels defaults
     - cmd: conda.exe config --add channels conda-forge
-    # Add the pycalphad upstream channels
-    - cmd: conda.exe config --add channels msys2
-    - cmd: conda.exe config --add channels pycalphad
 
     # Configure the VM.
     - cmd: conda.exe install -n root --quiet --yes conda-forge-build-setup
