@@ -1,6 +1,6 @@
 {% set name = "espei" %}
-{% set version = "0.4.1" %}
-{% set sha256 = "35c620cc4a1a45167124aa46c184db47eee5f484ac878a76cde04510647fddc0" %}
+{% set version = "0.5" %}
+{% set sha256 = "f0d9ecfdfe9296bfdbed299df2398f8cf0ff74bf46fd7d267c1f02bfeaaeeb98" %}
 
 package:
   name: {{ name|lower }}
@@ -32,7 +32,7 @@ requirements:
     - tinydb >=3
     - scikit-learn
     - emcee
-    - pycalphad >=0.5
+    - pycalphad >=0.7
     - pyyaml
     - cerberus
     - mpi4py
