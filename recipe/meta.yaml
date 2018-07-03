@@ -1,6 +1,6 @@
 {% set name = "espei" %}
-{% set version = "0.5.2" %}
-{% set sha256 = "e0c7e56bea0ade288dd613551f33a0b3379ecfee7581721bc263720dc79aee6c" %}
+{% set version = "0.6" %}
+{% set sha256 = "42ee339d3162e810f7378c7a81efa01f1669faac17cc9bc3647a837539aba16d" %}
 
 package:
   name: {{ name|lower }}
@@ -27,7 +27,7 @@ requirements:
     - numpy
     - scipy
     - six
-    - dask >=0.15
+    - dask >=0.18
     - distributed
     - tinydb >=3
     - scikit-learn
@@ -35,7 +35,7 @@ requirements:
     - pycalphad >=0.7
     - pyyaml
     - cerberus
-    - mpi4py
+    - mpi4py <3
     - bibtexparser
 
 test:
