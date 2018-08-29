@@ -1,6 +1,6 @@
 {% set name = "espei" %}
-{% set version = "0.6" %}
-{% set sha256 = "42ee339d3162e810f7378c7a81efa01f1669faac17cc9bc3647a837539aba16d" %}
+{% set version = "0.6.1" %}
+{% set sha256 = "8d2ab9b55490269668da884822df88722c0f96ea21a11b45a888beb1967f8a49" %}
 
 package:
   name: {{ name|lower }}
@@ -26,6 +26,7 @@ requirements:
     - python
     - numpy
     - scipy
+    - sympy ==1.1.1
     - six
     - dask >=0.18
     - distributed
