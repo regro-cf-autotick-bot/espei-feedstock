@@ -1,6 +1,6 @@
 {% set name = "espei" %}
-{% set version = "0.6.1" %}
-{% set sha256 = "8d2ab9b55490269668da884822df88722c0f96ea21a11b45a888beb1967f8a49" %}
+{% set version = "0.7.1" %}
+{% set sha256 = "a1f4f84d2c6e35216282bf404beadc949102713847ff1c65951e4877897e42de" %}
 
 package:
   name: {{ name|lower }}
@@ -12,9 +12,8 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  skip: true  # [win32]
+  noarch: python
   number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
   entry_points:
     - espei = espei.espei_script:main
 
@@ -26,14 +25,14 @@ requirements:
     - python
     - numpy
     - scipy
-    - sympy ==1.1.1
+    - sympy >=1.3
     - six
     - dask >=0.18
     - distributed
-    - tinydb >=3
+    - tinydb >=3.8
     - scikit-learn
     - emcee
-    - pycalphad >=0.7
+    - pycalphad >=0.8
     - pyyaml
     - cerberus
     - mpi4py <3
@@ -46,6 +45,7 @@ test:
     - espei.datasets
     - espei.espei_script
     - espei.mcmc
+    - espei.optimizers
     - espei.paramselect
     - espei.plot
     - espei.refdata
