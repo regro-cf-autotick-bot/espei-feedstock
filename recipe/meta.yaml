@@ -1,6 +1,6 @@
 {% set name = "espei" %}
-{% set version = "0.7.2" %}
-{% set sha256 = "c6be8c1c464da648efc832905d0800c79e471498373c5387982386a5a9b6a2bf" %}
+{% set version = "0.7.3" %}
+{% set sha256 = "79105a583b0c2da156222bfc7da58c76ded047bf875cbbc80fc38b075a1bb308" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   entry_points:
     - espei = espei.espei_script:main
 
@@ -22,18 +22,17 @@ requirements:
     - python
     - setuptools
   run:
-    - python
+    - python >=3
     - numpy
     - scipy
     - sympy >=1.3
     - six
-    - dask >=0.18
-    - dask <2
-    - distributed <2
+    - dask >=2
+    - distributed >=2
     - tinydb >=3.8
     - scikit-learn
     - emcee <3
-    - pycalphad >=0.8
+    - pycalphad >=0.8.1
     - pyyaml
     - cerberus
     - bibtexparser
@@ -51,6 +50,7 @@ test:
     - espei.refdata
     - espei.rstate
     - espei.utils
+    - pycalphad
   commands:
     - espei -h
 
@@ -61,8 +61,8 @@ about:
   license_file: LICENSE
   summary: 'Fitting thermodynamic models with pycalphad.'
   description: |
-    ESPEI, or Extensible Self-optimizing Phase Equilibria Infrastructure, 
-    is a tool for automated thermodynamic database development within the 
+    ESPEI, or Extensible Self-optimizing Phase Equilibria Infrastructure,
+    is a tool for automated thermodynamic database development within the
     CALPHAD method.
   doc_url: http://espei.org
   dev_url: https://github.com/PhasesResearchLab/espei
